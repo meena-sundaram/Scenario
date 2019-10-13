@@ -1,6 +1,6 @@
 package basic;
 
-interface Actor {                                                 //Interface
+interface Actor {                                                    //Interface Actor
 	boolean makeUpRequired = true;
 	String address = "chennai";
 	void act();
@@ -10,9 +10,9 @@ interface Actor {                                                 //Interface
 
 public class ActorSivakumar implements Actor {
 	
-	static String address = "Coimbatore";                        //Static variable
+	static String address = "Coimbatore";                        //Static variable address
 
-	public ActorSivakumar(int age, String car) {
+	public ActorSivakumar(int age, String car) {                 //parameterized constructor
 		System.out.println("Actor: SivaKumar");
 		System.out.println("Age: "+age);
 		System.out.println("Car name: "+car);
@@ -20,7 +20,7 @@ public class ActorSivakumar implements Actor {
 	}
 
 	public ActorSivakumar() {
-	
+		System.out.println("This is a no argument constructor");   //no argument constructor
 	}
 
 	public void act() {
@@ -40,13 +40,13 @@ public class ActorSivakumar implements Actor {
 	}
 
 	public static void main(String[] args) {
-		ActorSivakumar as = new ActorSivakumar(65, "Audi Car");
-		as.act();
+		ActorSivakumar as = new ActorSivakumar(65, "Audi Car");      //new keyword creates object for ActorSivaKumar and invokes constructor to initialize the created object
+		as.act();                                                    //static binding
 		as.dance();
 		as.sing();
 		//as.speaking();
 		System.out.println("Static valued address" +as.address);
-		Actor ac = new ActorSivakumar();
+		Actor ac = new ActorSivakumar();                            //dynamic binding
 		//as.sing();
 		as.speaking();
 		System.out.println("Interface address" +ac.address);
