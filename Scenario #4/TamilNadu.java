@@ -1,18 +1,21 @@
 package basic;
 
 abstract class India {                                                        //abstract class india
-	
 	abstract void speakLanguage();
 	abstract void eat();
 	abstract void dress();
 	static String capital = "New Delhi";
 
 	public India(String primeMinister) {                                     //parameterized constructor
-		System.out.println("our Prime Minister is " + primeMinister);
+		System.out.println("Our Prime Minister is " + primeMinister);
 	}
 }
 abstract class SouthIndia extends India{                                   //inherits india class
 	
+	public SouthIndia(String primeMinister) {
+		super(primeMinister);
+		
+	}
 	void cultivate(){
 		System.out.println("Rice and Wheat cultivation"); 
 	}
@@ -22,21 +25,24 @@ abstract class SouthIndia extends India{                                   //inh
 }
 public class TamilNadu extends SouthIndia {
 
+	public TamilNadu(String primeMinister) {
+		super(primeMinister);
+		
+	}
 	static String capital = "Chennai";                                      //static variable
 
 	void speakLanguage() {                                                 //overriding methods
-		
+		System.out.println("tamil,english");
 	}
 
 	void eat() {
-	
+	System.out.println("hot and spicy foods");
 	}
 
 	void dress() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Sarees, dhoties");
 	}
-	 void cultivate() {
+	void cultivate() {                                                                    //method overridden
 		 System.out.println("Rice and Sugar cane is major cultivation in Tamilnadu");
 	 }
 	 void livingStyle() {
@@ -48,8 +54,7 @@ public class TamilNadu extends SouthIndia {
 		SouthIndia si = new TamilNadu("Modi");                         //dynamic binding
 		si.cultivate();
 		si.livingStyle();
-
+		si.dress();
 	}
-
 
 }
